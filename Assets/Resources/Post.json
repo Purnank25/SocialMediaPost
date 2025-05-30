@@ -1,10 +1,7 @@
-{
-  "posts": [
-    {
-      "userName": "John Doe",
-      "postContent": "This is my first post!",
-      "likeCount": 5,
-      "profilePic": "profile1"
-    }
-  ]
-}
+  {
+    "userName": "Alice Johnson",
+    "postContent": "Had a great day at the beach!",
+    "likeCount": 5,
+    "profilePic": "profile1"
+  }
+

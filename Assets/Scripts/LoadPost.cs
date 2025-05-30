@@ -22,5 +22,6 @@ public class LoadPost : MonoBehaviour
         likeCount += isLiked ? 1 : -1;
         likeCountText.text = likeCount.ToString();
         likeButton.image.sprite = isLiked ? likedSprite : unlikedSprite;
+        Debug.Log("program starrted");
     }
 }

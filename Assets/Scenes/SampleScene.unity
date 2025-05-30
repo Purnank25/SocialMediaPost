@@ -1339,6 +1339,7 @@ GameObject:
   - component: {fileID: 1733071536}
   - component: {fileID: 1733071535}
   - component: {fileID: 1733071539}
+  - component: {fileID: 1733071540}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1421,6 +1422,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1841416246}
   - {fileID: 1888142124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1448,6 +1450,21 @@ MonoBehaviour:
   likeCountText: {fileID: 1844279175}
   likedSprite: {fileID: -5668837028299239972, guid: 60bb35154c99039408cf134f6394329f, type: 3}
   unlikedSprite: {fileID: 4458093077677007048, guid: feecaa31dee67ea48b68d6cf120985dc, type: 3}
+--- !u!114 &1733071540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733071534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8fd41defa00b84685757f5d649681e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 1017232062}
+  postContent: {fileID: 1798337303}
+  likeCount: {fileID: 1844279175}
 --- !u!1 &1798337301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1645,7 @@ RectTransform:
   - {fileID: 1798337302}
   - {fileID: 1844279174}
   - {fileID: 2039007236}
-  m_Father: {fileID: 1888142124}
+  m_Father: {fileID: 1733071538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1647,9 +1664,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f04fb3697ac5f46bfa8de08b583ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameText: {fileID: 0}
-  profilePic: {fileID: 0}
-  contentText: {fileID: 0}
+  usernameText: {fileID: 1017232062}
+  profilePic: {fileID: 56010237}
+  contentText: {fileID: 1798337303}
   likeButton: {fileID: 2039007237}
   likeCountText: {fileID: 1844279175}
   likedSprite: {fileID: -5668837028299239972, guid: 60bb35154c99039408cf134f6394329f, type: 3}
@@ -1862,7 +1879,6 @@ RectTransform:
   - {fileID: 1052975855}
   - {fileID: 1326755065}
   - {fileID: 1218373607}
-  - {fileID: 1841416246}
   m_Father: {fileID: 1733071538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
