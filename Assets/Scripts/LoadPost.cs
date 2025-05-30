@@ -6,16 +6,18 @@ public class LoadPost : MonoBehaviour
 {
     public TextMeshProUGUI username;
     public TextMeshProUGUI postContent;
-    public int likeCount;
+    public int likeCount = 0;
     public Image profilePicture;
-    public Button likeButton;
+    public Button likeButton ;
     public TextMeshProUGUI likeCountText;
 
     public bool isLiked = false;
     public Sprite likedSprite;
     public Sprite unlikedSprite;
+    public Image buttonImage ;
     
-    
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,9 +41,19 @@ public class LoadPost : MonoBehaviour
     public void ToggleLike()
     {
         isLiked = !isLiked;
-        likeCount = isLiked ? 1 : -1;
+       
         likeCountText.text = likeCount.ToString();
-        
+        if (isLiked) {
+            likeButton.image.sprite = likedSprite;
+            likeCount++;
+        }
+        else
+        {
+            {
+                likeButton.image.sprite = unlikedSprite;
+               
+            }
+        }
 
     }
 }
