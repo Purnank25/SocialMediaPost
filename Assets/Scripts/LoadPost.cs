@@ -29,6 +29,7 @@ public class LoadPost : MonoBehaviour
         }
         else
         {
+            likeButton.image.sprite = unlikedSprite;
             likeCount--;
         }
         likeCountText.text = likeCount.ToString();
