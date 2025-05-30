@@ -1,55 +1,46 @@
-using TMPro.Examples;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 public class LoadPost : MonoBehaviour
 {
     public TextMeshProUGUI username;
     public TextMeshProUGUI postContent;
-    public int likeCount = 0;
     public Image profilePicture;
-    public Button likeButton ;
+    public Button likeButton;
     public TextMeshProUGUI likeCountText;
-
-    public bool isLiked = false;
+    public Image buttonImage;
     public Sprite likedSprite;
     public Sprite unlikedSprite;
-    public Image buttonImage ;
-    
 
+    private int likeCount = 0;
+    private bool isLiked = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Load_Post(PostData data)
     {
-        
+        username.text = data.userName;
+        postContent.text = data.postContent;
+        likeCount = data.likeCount;
+        likeCountText.text = likeCount.ToString();
+
+        Sprite pic = Resources.Load<Sprite>(data.profilePic);
+        if (pic != null)
+            profilePicture.sprite = pic;
+
+        UpdateLikeUI();
+        likeButton.onClick.AddListener(ToggleLike);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ToggleLike()
     {
-        
+        isLiked = !isLiked;
+        likeCount += isLiked ? 1 : -1;
+        UpdateLikeUI();
     }
-    
-    public void ToggleLike()
-    {
-        
-       
-       
-        if (isLiked) {
-            likeButton.image.sprite = likedSprite;
-            likeCount++;
-            likeCountText.text = likeCount.ToString();
-            isLiked = !isLiked;
-        }
-        else
-        {
-            {
-                likeButton.image.sprite = unlikedSprite;
-                likeCount--;
-                likeCountText.text = likeCount.ToString();
-                isLiked = !isLiked;
-            }
-        }
 
+    private void UpdateLikeUI()
+    {
+        likeCountText.text = likeCount.ToString();
+        buttonImage.sprite = isLiked ? likedSprite : unlikedSprite;
     }
 }
