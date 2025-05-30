@@ -33,7 +33,5 @@ public class LoadPost : MonoBehaviour
             likeCount--;
         }
         likeCountText.text = likeCount.ToString();
-         
-        Debug.Log("program starrted");
     }
 }

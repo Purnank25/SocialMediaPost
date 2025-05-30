@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4268459230832778112, guid: e9cc1e389aca283459470138fc280012, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e019cd8c6a958a74bb226a0fd85030d6, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1465,6 +1465,7 @@ MonoBehaviour:
   username: {fileID: 1017232062}
   postContent: {fileID: 1798337303}
   likeCount: {fileID: 1844279175}
+  profilePicture: {fileID: 56010237}
 --- !u!1 &1798337301
 GameObject:
   m_ObjectHideFlags: 0

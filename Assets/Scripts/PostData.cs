@@ -4,7 +4,7 @@ public class PostData
     public string userName;
     public string postContent;
     public int likeCount;
-    public string profilePic;
+    public string imageUrl;
 }
 
 

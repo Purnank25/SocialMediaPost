@@ -1,13 +1,16 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Data;
+using UnityEngine.Rendering;
+using System.IO;
 
 public class PostFromJSON : MonoBehaviour
 {
     public TextMeshProUGUI username;
     public TextMeshProUGUI postContent;
     public TextMeshProUGUI likeCount;
-
+    public Image profilePicture;
     
      void Start()
     {
@@ -15,11 +18,22 @@ public class PostFromJSON : MonoBehaviour
         if (jsonFile != null)
         {
             PostData postData = JsonUtility.FromJson<PostData>(jsonFile.text);
-            Debug.Log("post data result =" + postData.likeCount);
             username.text = postData.userName;
             postContent.text = postData.postContent;
             likeCount.text = postData.likeCount.ToString();
-
+           
+            Debug.Log(postData.imageUrl);
+            Sprite profilePictureSprite = Resources.Load<Sprite>(postData.imageUrl);
+            
+            if (profilePictureSprite != null)
+            {
+                Debug.Log("Image looooded");
+                profilePicture.sprite = profilePictureSprite;
+            }
+            else
+            {
+                Debug.Log("Sprite was not found");
+            }
         }
         else
         {
@@ -31,5 +45,6 @@ public class PostFromJSON : MonoBehaviour
     {
 
     }
+   
 
 }
