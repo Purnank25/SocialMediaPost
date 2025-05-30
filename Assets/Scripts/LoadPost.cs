@@ -29,13 +29,7 @@ public class LoadPost : MonoBehaviour
     {
         
     }
-    public void Load_Post(PostData data)
-    {
-        username.text = data.userName;
-        postContent.text = data.postContent;
-        likeCount = data.likeCount;
-
-    }
+    
     public void ToggleLike()
     {
         
