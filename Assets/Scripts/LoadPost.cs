@@ -12,16 +12,27 @@ public class LoadPost : MonoBehaviour
     public Sprite likedSprite, unlikedSprite;
 
     private bool isLiked = false;
-    private int likeCount;
+    private int likeCount ;
 
-   
+    public void Start()
+    {
+        likeCount = int.Parse(likeCountText.text);
+    }
 
     public void ToggleLike()
     {
         isLiked = !isLiked;
-        likeCount += isLiked ? 1 : -1;
+        if (isLiked)
+        {
+             likeCount++;
+            likeButton.image.sprite = likedSprite;
+        }
+        else
+        {
+            likeCount--;
+        }
         likeCountText.text = likeCount.ToString();
-        likeButton.image.sprite = isLiked ? likedSprite : unlikedSprite;
+         
         Debug.Log("program starrted");
     }
 }
