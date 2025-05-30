@@ -34,24 +34,26 @@ public class LoadPost : MonoBehaviour
         username.text = data.userName;
         postContent.text = data.postContent;
         likeCount = data.likeCount;
-        likeCountText.text = likeCount.ToString();
-        likeButton.onClick.AddListener(ToggleLike);
 
     }
     public void ToggleLike()
     {
-        isLiked = !isLiked;
+        
        
-        likeCountText.text = likeCount.ToString();
+       
         if (isLiked) {
             likeButton.image.sprite = likedSprite;
             likeCount++;
+            likeCountText.text = likeCount.ToString();
+            isLiked = !isLiked;
         }
         else
         {
             {
                 likeButton.image.sprite = unlikedSprite;
-               
+                likeCount--;
+                likeCountText.text = likeCount.ToString();
+                isLiked = !isLiked;
             }
         }
 
