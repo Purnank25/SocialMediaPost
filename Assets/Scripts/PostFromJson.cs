@@ -11,23 +11,21 @@ public class PostFromJSON : MonoBehaviour
     public TextMeshProUGUI postContent;
     public TextMeshProUGUI likeCount;
     public Image profilePicture;
-    
-     void Start()
+    public GameObject postPrefabs;
+    public Transform postContainer;
+    public TextAsset jsonFile;
+    void Start()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("post");
+        jsonFile = Resources.Load<TextAsset>("post");
         if (jsonFile != null)
         {
             PostData postData = JsonUtility.FromJson<PostData>(jsonFile.text);
             username.text = postData.userName;
             postContent.text = postData.postContent;
             likeCount.text = postData.likeCount.ToString();
-           
-            Debug.Log(postData.imageUrl);
             Sprite profilePictureSprite = Resources.Load<Sprite>(postData.imageUrl);
-            
             if (profilePictureSprite != null)
             {
-                Debug.Log("Image looooded");
                 profilePicture.sprite = profilePictureSprite;
             }
             else
@@ -39,12 +37,5 @@ public class PostFromJSON : MonoBehaviour
         {
             Debug.Log("json not found");
         }
-
     }
-    void Update()
-    {
-
-    }
-   
-
 }

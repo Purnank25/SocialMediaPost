@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 [System.Serializable]
 public class PostData
 {
@@ -6,5 +8,3 @@ public class PostData
     public int likeCount;
     public string imageUrl;
 }
-
-

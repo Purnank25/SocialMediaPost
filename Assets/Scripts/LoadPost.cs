@@ -12,7 +12,7 @@ public class LoadPost : MonoBehaviour
     public Sprite likedSprite, unlikedSprite;
 
     private bool isLiked = false;
-    private int likeCount ;
+    private int likeCount;
 
     public void Start()
     {
@@ -24,7 +24,7 @@ public class LoadPost : MonoBehaviour
         isLiked = !isLiked;
         if (isLiked)
         {
-             likeCount++;
+            likeCount++;
             likeButton.image.sprite = likedSprite;
         }
         else
